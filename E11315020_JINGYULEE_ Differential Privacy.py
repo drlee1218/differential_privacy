@@ -13,7 +13,7 @@ from sklearn.metrics import classification_report, accuracy_score
 def load_data():
     column_names = ['age', 'workclass', 'fnlwgt', 'education', 'education-num', 'marital-status', 'occupation',
                     'relationship', 'race', 'sex', 'capital-gain', 'capital-loss', 'hours-per-week', 'native-country', 'income']
-    df = pd.read_csv("C:/Users/drlee/Downloads/adult/adult.data", header=None, names=column_names, na_values=" ?", skipinitialspace=True)
+    df = pd.read_csv("adult_dataset/adult.data", header=None, names=column_names, na_values=" ?", skipinitialspace=True)
     df.dropna(inplace=True)
     X = df.drop(columns='income')
     y = df['income'].apply(lambda x: 1 if x == '>50K' else 0)
